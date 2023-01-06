@@ -5,11 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..the project yes'
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..the project yes'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
